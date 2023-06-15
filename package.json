@@ -3,16 +3,19 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check build-only",
+    "dev": "npm run generate-messages &&vite",
+    "build": "npm run generate-messages && run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "generate-messages": "node ./api/messages.js"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.0.2",
     "pinia": "^2.1.3",
+    "uuid": "^9.0.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
