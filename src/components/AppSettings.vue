@@ -41,6 +41,7 @@ const showModal = ref(false)
 
 <style scoped>
 .settings-icon {
+  height: 40px;
   cursor: pointer;
 }
 .buttons {

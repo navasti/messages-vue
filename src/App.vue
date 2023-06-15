@@ -6,9 +6,9 @@ import {
   useSettingsStore
 } from '@/stores'
 import { MessageTable, TablePagination } from '@/components/Table'
+import { AppSettings, MessageSearcher } from '@/components'
 import { MessagesLogoIcon } from '@/components/icons'
 import { CommentRendering } from '@/types'
-import { AppSettings } from '@/components'
 import { translate } from '@/locales'
 import { onMounted } from 'vue'
 
@@ -26,7 +26,10 @@ onMounted(() => fetchMessagesStore.fetchMessages())
       <MessagesLogoIcon class="logo" />
       <h1 class="title">{{ translate('messages') }}</h1>
     </div>
-    <AppSettings />
+    <div class="utility-icons">
+      <MessageSearcher />
+      <AppSettings />
+    </div>
   </header>
 
   <div class="messages">
@@ -75,6 +78,10 @@ onMounted(() => fetchMessagesStore.fetchMessages())
   align-items: center;
   margin-bottom: 30px;
   display: flex;
+}
+.utility-icons {
+  display: flex;
+  align-items: center;
 }
 .messages {
   display: flex;

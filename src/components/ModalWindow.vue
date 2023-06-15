@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { CloseIcon } from '@/components/icons'
 defineProps({
-  show: Boolean
+  show: Boolean,
+  fullPage: Boolean
 })
 </script>
 
 <template>
   <Transition name="modal">
     <div v-if="show" class="modal-mask">
-      <div class="modal-container">
+      <div class="modal-container" :class="fullPage ? 'full-page' : 'regular'">
         <div class="modal-header">
           <h3>
             <slot name="title"></slot>
@@ -18,9 +19,7 @@ defineProps({
           </button>
         </div>
         <div class="modal-body">
-          <p>
-            <slot name="body"></slot>
-          </p>
+          <slot name="body"></slot>
         </div>
       </div>
     </div>
@@ -40,14 +39,35 @@ defineProps({
   transition: opacity 0.3s ease;
 }
 
-.modal-container {
+.modal-container.full-page {
+  max-width: 1280px;
+  max-height: 800px;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-container.regular {
   width: 400px;
+}
+.modal-container {
   margin: auto;
   border-radius: 10px;
   padding: 20px 30px;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
+}
+
+@media screen and (min-width: 800px) {
+  .modal-container.regular {
+    width: 600px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .modal-container.regular {
+    width: 750px;
+  }
 }
 
 .modal-header {
