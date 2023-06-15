@@ -1,3 +1,21 @@
 export const pl = {
-  message: 'witaj świecie'
+  en: 'Angielski',
+  pl: 'Polski',
+  of: 'z',
+  type: 'Typ',
+  name: 'Nazwa',
+  date: 'Data',
+  displayed: 'Wyświetlone',
+  sender: 'Nadawca',
+  settings: 'Ustawienia',
+  totalMessages: 'Ilość wiadomości',
+  pagination: 'Paginacja',
+  messages: 'Wiadomości',
+  loadMoreData: 'Załaduj więcej danych',
+  selectedLanguage: 'Wybrany język',
+  selectPolishLanguage: 'Wybierz język polski',
+  selectEnglishLanguage: 'Wybierz język angielski',
+  selectedRendering: 'Wybrany sposób renderowania',
+  selectPaginationRendering: 'Wybierz renderowanie paginacji',
+  selectInfiniteScrollRendering: 'Wybierz renderowanie nieskończone'
 }
