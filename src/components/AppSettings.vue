@@ -3,8 +3,8 @@ import { useSettingsStore } from '@/stores/settings'
 import { CommentRendering, Language } from '@/types'
 import { SettingsIcon } from '@/components/icons'
 import { ModalWindow } from '@/components'
-import { ref } from 'vue'
 import { translate } from '@/locales'
+import { ref } from 'vue'
 
 const settings = useSettingsStore()
 const showModal = ref(false)

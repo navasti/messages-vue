@@ -6,6 +6,7 @@ export const en = {
   name: 'Name',
   displayed: 'Displayed',
   date: 'Date',
+  infinite: 'Infinite',
   totalMessages: 'Total messages',
   sender: 'Sender',
   settings: 'Settings',

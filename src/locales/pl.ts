@@ -6,6 +6,7 @@ export const pl = {
   name: 'Nazwa',
   date: 'Data',
   displayed: 'Wyświetlone',
+  infinite: 'Nieskończone',
   sender: 'Nadawca',
   settings: 'Ustawienia',
   totalMessages: 'Ilość wiadomości',

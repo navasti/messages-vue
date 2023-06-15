@@ -5,11 +5,14 @@ import { ref } from 'vue'
 
 export const useSettingsStore = defineStore('settings', () => {
   const language = ref<Language>((localStorage.getItem('language') as Language) || Language.en)
-  const commentRendering = ref<CommentRendering>(CommentRendering.pagination)
+  const commentRendering = ref<CommentRendering>(
+    (localStorage.getItem('rendering') as CommentRendering) || CommentRendering.pagination
+  )
 
   const { locale } = useI18n()
 
   const setCommentRendering = (rendering: CommentRendering) => {
+    localStorage.setItem('rendering', rendering)
     commentRendering.value = rendering
   }
 
